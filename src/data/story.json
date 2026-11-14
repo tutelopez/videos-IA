@@ -1,0 +1,149 @@
+{
+  "title": "David y goliat (1 samuel 17)",
+  "fps": 30,
+  "voice": "es-AR-TomasNeural",
+  "backgroundMusic": "music/background.mp3",
+  "volumes": {
+    "voice": 1.0,
+    "sfx": 0.5,
+    "music": 0.12
+  },
+  "scenes": [
+    {
+      "id": 1,
+      "durationInSeconds": 4,
+      "badge": "HISTORIA BÍBLICA",
+      "text": "¿Conoces el momento en que David y goliat (1 samuel 17) cambió la historia para siempre?",
+      "highlightWords": [
+        "David",
+        "historia"
+      ],
+      "sfxEntrada": "trueno",
+      "sfxEnPalabra": [
+        {
+          "palabra": "David",
+          "efecto": "impacto"
+        }
+      ],
+      "background": {
+        "type": "gradient",
+        "colors": [
+          "#080D1A",
+          "#14213D"
+        ],
+        "direction": "180deg"
+      },
+      "character": {
+        "type": "duelo",
+        "position": "center",
+        "scale": 1.0
+      },
+      "visualAtmosphere": "lightning"
+    },
+    {
+      "id": 2,
+      "durationInSeconds": 5,
+      "badge": "LA PRUEBA",
+      "text": "En medio de la prueba más difícil, todo parecía perdido humanamente.",
+      "highlightWords": [
+        "prueba",
+        "difícil,",
+        "perdido"
+      ],
+      "sfxEntrada": "suspenso",
+      "sfxEnPalabra": [
+        {
+          "palabra": "difícil",
+          "efecto": "suspenso"
+        }
+      ],
+      "background": {
+        "type": "gradient",
+        "colors": [
+          "#1A1412",
+          "#2E1E16"
+        ],
+        "direction": "180deg"
+      },
+      "character": {
+        "type": "multitud",
+        "position": "center",
+        "scale": 0.95
+      },
+      "visualAtmosphere": "glow"
+    },
+    {
+      "id": 3,
+      "durationInSeconds": 5,
+      "badge": "EL PODER DE DIOS",
+      "text": "Pero Dios se manifestó con poder sobrenatural frente a todos los presentes.",
+      "highlightWords": [
+        "Dios",
+        "poder",
+        "sobrenatural"
+      ],
+      "sfxEntrada": "whoosh",
+      "sfxEnPalabra": [
+        {
+          "palabra": "Dios",
+          "efecto": "brillo"
+        },
+        {
+          "palabra": "poder",
+          "efecto": "impacto"
+        }
+      ],
+      "background": {
+        "type": "gradient",
+        "colors": [
+          "#0C1628",
+          "#1E3A5F"
+        ],
+        "direction": "180deg"
+      },
+      "character": {
+        "type": "tunica",
+        "position": "center",
+        "scale": 1.0
+      },
+      "visualAtmosphere": "sunbeam"
+    },
+    {
+      "id": 4,
+      "durationInSeconds": 5,
+      "badge": "REFLEXIÓN",
+      "text": "Recuerda: ningún gigante es más grande que el Dios que camina contigo. Sígueme para más.",
+      "highlightWords": [
+        "Dios",
+        "camina",
+        "contigo."
+      ],
+      "footer": "Palabra de Dios",
+      "sfxEntrada": "brillo",
+      "sfxEnPalabra": [
+        {
+          "palabra": "Dios",
+          "efecto": "campana"
+        },
+        {
+          "palabra": "contigo",
+          "efecto": "brillo"
+        }
+      ],
+      "background": {
+        "type": "gradient",
+        "colors": [
+          "#071020",
+          "#152644"
+        ],
+        "direction": "180deg"
+      },
+      "character": {
+        "type": "tunica",
+        "position": "center",
+        "scale": 1.0
+      },
+      "visualAtmosphere": "sunbeam"
+    }
+  ]
+}

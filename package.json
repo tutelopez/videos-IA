@@ -1,7 +1,7 @@
 {
-  "name": "temp-project",
+  "name": "biblical-reels",
   "version": "1.0.0",
-  "description": "My Remotion video",
+  "description": "Reels animados verticales de historias bíblicas con Remotion",
   "repository": {},
   "license": "UNLICENSED",
   "engines": {
@@ -10,6 +10,8 @@
   "private": true,
   "dependencies": {
     "@remotion/cli": "4.0.543",
+    "@remotion/google-fonts": "^4.0.543",
+    "@remotion/lottie": "^4.0.543",
     "react": "19.3.1",
     "react-dom": "19.3.1",
     "remotion": "4.0.543"
@@ -23,8 +25,13 @@
     "typescript": "5.9.3"
   },
   "scripts": {
+    "studio": ".venv/bin/python server.py",
     "dev": "remotion studio",
+    "start": "remotion studio",
+    "voz": ".venv/bin/python scripts/generar_voz.py",
+    "prompts": ".venv/bin/python scripts/generar_prompts.py",
     "build": "remotion bundle",
+    "render": "remotion render BiblicalReel out/reel.mp4",
     "upgrade": "remotion upgrade",
     "lint": "eslint src && tsc"
   },

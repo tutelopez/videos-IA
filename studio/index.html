@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Biblical Reels Studio 🎬</title>
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Anton & Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            night: '#070C18',
+            deep: '#0F172A',
+            panel: '#1E293B',
+            gold: '#FBBF24',
+            goldDark: '#D97706',
+            sand: '#D4A373'
+          },
+          fontFamily: {
+            title: ['Anton', 'sans-serif'],
+            body: ['Montserrat', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      background: radial-gradient(circle at 50% 0%, #152038 0%, #070C18 100%);
+      min-height: 100vh;
+      color: #F8FAFC;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .gold-glow {
+      box-shadow: 0 0 25px rgba(251, 191, 36, 0.35);
+    }
+    .custom-scroll::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scroll::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body class="p-4 md:p-8 custom-scroll">
+
+  <!-- Header Principal -->
+  <header class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between pb-8 border-b border-slate-800 gap-4">
+    <div class="flex items-center gap-4">
+      <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-3xl shadow-lg shadow-amber-500/20">
+        📜
+      </div>
+      <div>
+        <h1 class="text-3xl font-extrabold tracking-wide flex items-center gap-2">
+          Biblical Reels <span class="text-amber-400 font-title tracking-wider">STUDIO</span>
+        </h1>
+        <p class="text-xs md:text-sm text-slate-400">
+          Generador de reels verticales 1080×1920 con IA • Edge-TTS • Remotion
+        </p>
+      </div>
+    </div>
+
+    <!-- Indicador de Estado Global -->
+    <div class="flex items-center gap-3 bg-slate-900/80 border border-slate-800 px-5 py-2.5 rounded-full text-xs font-semibold backdrop-blur">
+      <span id="statusDot" class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+      <span id="statusText" class="text-slate-300">Listo para crear</span>
+    </div>
+  </header>
+
+  <main class="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 mt-8">
+
+    <!-- COLUMNA IZQUIERDA: Generador de Prompt y Editor de Escenas (7 Cols) -->
+    <div class="lg:col-span-7 space-y-6">
+
+      <!-- TARJETA 1: Generador con Prompt -->
+      <section class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl relative overflow-hidden backdrop-blur">
+        <div class="absolute -top-12 -right-12 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <h2 class="text-xl font-bold text-amber-400 flex items-center gap-2 mb-2">
+          <span>✨</span> Paso 1: Generador de Historia con IA
+        </h2>
+        <p class="text-xs text-slate-400 mb-4">
+          Escribe cualquier historia o enseñanza bíblica. La IA estructurará las escenas, textos rítmicos, palabras resaltadas y efectos.
+        </p>
+
+        <!-- Prompt Textarea -->
+        <div class="space-y-3">
+          <textarea 
+            id="promptInput" 
+            rows="3" 
+            placeholder="Ejemplo: Moisés y el Mar Rojo, Daniel en el foso de los leones, Jonás huyendo a Tarsis, o pega un guión propio..." 
+            class="w-full bg-slate-950 border border-slate-700 rounded-2xl p-4 text-sm text-white placeholder-slate-500 focus:outline-none focus:border-amber-400 transition"
+          >David y Goliat (1 Samuel 17)</textarea>
+
+          <!-- Chips de Sugerencias Rápidas -->
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="text-slate-500 py-1 font-semibold">Ideas rápidas:</span>
+            <button onclick="setPrompt('Moisés y el Mar Rojo (Éxodo 14)')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-full transition">🌊 Moisés y el Mar Rojo</button>
+            <button onclick="setPrompt('Daniel en el foso de los leones (Daniel 6)')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-full transition">🦁 Daniel y los leones</button>
+            <button onclick="setPrompt('Jonás y el gran pez (Jonás 1-2)')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-full transition">🐋 Jonás y el gran pez</button>
+            <button onclick="setPrompt('La armadura de Dios (Efesios 6)')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-3 py-1 rounded-full transition">🛡️ La Armadura de Dios</button>
+          </div>
+        </div>
+
+        <!-- Opciones del Generador -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-5 pt-4 border-t border-slate-800/80 text-xs">
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1.5">Voz en Off (Edge-TTS)</label>
+            <select id="voiceSelect" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-slate-200 focus:outline-none focus:border-amber-400">
+              <option value="es-AR-TomasNeural" selected>🇦🇷 Tomás (Argentina - Solemne / Juvenil)</option>
+              <option value="es-MX-JorgeNeural">🇲🇽 Jorge (México - Narrador Profundo)</option>
+              <option value="es-ES-AlvaroNeural">🇪🇸 Álvaro (España - Épico)</option>
+              <option value="es-CO-GonzaloNeural">🇨🇴 Gonzalo (Colombia - Cálido)</option>
+              <option value="es-AR-ElenaNeural">🇦🇷 Elena (Argentina - Femenina Emotiva)</option>
+              <option value="es-MX-DaliaNeural">🇲🇽 Dalia (México - Femenina Clara)</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block font-semibold text-slate-300 mb-1.5">Duración / Escenas</label>
+            <select id="scenesCountSelect" class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-slate-200 focus:outline-none focus:border-amber-400">
+              <option value="3">3 Escenas (~15 - 20 segundos)</option>
+              <option value="5" selected>5 Escenas (~30 - 35 segundos)</option>
+              <option value="8">8 Escenas (~50 - 60 segundos)</option>
+              <option value="9">9 Escenas (~60 segundos completos)</option>
+            </select>
+          </div>
+
+          <div class="sm:col-span-2">
+            <div class="flex items-center justify-between mb-1">
+              <label class="font-semibold text-slate-300">Clave Gemini API (Opcional)</label>
+              <a href="https://aistudio.google.com/app/apikey" target="_blank" class="text-amber-400 hover:underline">Obtener clave gratis ↗</a>
+            </div>
+            <input 
+              type="password" 
+              id="apiKeyInput" 
+              placeholder="Pega tu clave AI Studio aquí (si la dejas vacía, usará el motor inteligente integrado)" 
+              class="w-full bg-slate-950 border border-slate-700 rounded-xl p-2.5 text-slate-200 focus:outline-none focus:border-amber-400"
+            />
+          </div>
+        </div>
+
+        <!-- Botón de Generación -->
+        <button 
+          id="btnGenerate" 
+          onclick="generateStoryAction()" 
+          class="w-full mt-6 bg-gradient-to-r from-amber-400 to-amber-500 hover:from-amber-300 hover:to-amber-400 text-slate-950 font-bold py-3.5 px-6 rounded-2xl shadow-lg shadow-amber-500/20 transition flex items-center justify-center gap-2 text-sm"
+        >
+          <span>✨ Generar Guión Completo con IA</span>
+        </button>
+      </section>
+
+      <!-- TARJETA 2: Editor Interactivo de Escenas -->
+      <section class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl backdrop-blur space-y-4">
+        <div class="flex items-center justify-between">
+          <div>
+            <h2 class="text-xl font-bold text-amber-400 flex items-center gap-2">
+              <span>📝</span> Paso 2: Escenas del Reel
+            </h2>
+            <p class="text-xs text-slate-400 mt-0.5">
+              Revisa o edita los textos, personajes y palabras resaltadas antes de producir.
+            </p>
+          </div>
+          <button onclick="addNewScene()" class="text-xs bg-slate-800 hover:bg-slate-700 text-amber-300 px-3 py-1.5 rounded-xl border border-slate-700 flex items-center gap-1 transition">
+            + Agregar Escena
+          </button>
+        </div>
+
+        <div id="scenesContainer" class="space-y-4 max-h-[550px] overflow-y-auto pr-2 custom-scroll">
+          <!-- Las escenas se cargan dinámicamente aquí -->
+        </div>
+
+        <!-- Botón Guardar y Sintetizar Voz -->
+        <div class="pt-4 border-t border-slate-800 flex gap-3">
+          <button 
+            id="btnSaveVoice" 
+            onclick="saveAndGenerateVoice()" 
+            class="flex-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold py-3 px-4 rounded-xl text-xs md:text-sm shadow-md transition flex items-center justify-center gap-2"
+          >
+            <span>🎙️ Sintetizar Voz en Off (Edge-TTS)</span>
+          </button>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- COLUMNA DERECHA: Renderizado, Consola y Reproductor (5 Cols) -->
+    <div class="lg:col-span-5 space-y-6">
+
+      <!-- TARJETA 3: Renderizado y Reproductor de Video -->
+      <section class="bg-slate-900/90 border border-slate-800 rounded-3xl p-6 shadow-xl backdrop-blur space-y-5">
+        <h2 class="text-xl font-bold text-amber-400 flex items-center gap-2">
+          <span>🎬</span> Paso 3: Render y Video Final
+        </h2>
+
+        <!-- Botón de Render Remotion -->
+        <button 
+          id="btnRender" 
+          onclick="startRenderVideo()" 
+          class="w-full bg-gradient-to-r from-indigo-500 to-indigo-600 hover:from-indigo-400 hover:to-indigo-500 text-white font-bold py-3.5 px-6 rounded-2xl shadow-lg shadow-indigo-500/20 transition flex items-center justify-center gap-2 text-sm"
+        >
+          <span>🚀 Renderizar Reel MP4 (1080×1920)</span>
+        </button>
+
+        <!-- Barra de Progreso -->
+        <div id="progressContainer" class="hidden space-y-2">
+          <div class="flex justify-between text-xs text-slate-300">
+            <span id="progressLabel">Procesando...</span>
+            <span id="progressPercent">0%</span>
+          </div>
+          <div class="w-full bg-slate-950 rounded-full h-2 overflow-hidden border border-slate-800">
+            <div id="progressBar" class="bg-gradient-to-r from-amber-400 to-indigo-500 h-full w-0 transition-all duration-300"></div>
+          </div>
+        </div>
+
+        <!-- Reproductor Vertical de Video -->
+        <div id="playerSection" class="relative rounded-2xl overflow-hidden border border-slate-800 bg-black flex flex-col items-center justify-center min-h-[380px] shadow-2xl">
+          <video 
+            id="videoPlayer" 
+            controls 
+            playsinline 
+            class="w-full max-h-[500px] object-contain rounded-xl hidden"
+          ></video>
+
+          <!-- Placeholder si no hay video aún -->
+          <div id="videoPlaceholder" class="text-center p-8 space-y-3">
+            <div class="w-16 h-16 rounded-full bg-slate-800/80 flex items-center justify-center text-3xl mx-auto text-slate-500 border border-slate-700">
+              ▶
+            </div>
+            <p class="text-sm font-semibold text-slate-300">El video aún no está renderizado</p>
+            <p class="text-xs text-slate-500 max-w-xs">
+              Genera tu historia con el prompt, sintetiza la voz y haz clic en "Renderizar Reel MP4".
+            </p>
+          </div>
+        </div>
+
+        <!-- Acciones del Video Renderizado -->
+        <div id="videoActions" class="hidden flex gap-3 pt-2">
+          <a 
+            id="btnDownload" 
+            href="/api/video" 
+            download="reel_biblico.mp4" 
+            class="flex-1 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold py-3 px-4 rounded-xl text-xs flex items-center justify-center gap-2 shadow-lg transition"
+          >
+            <span>⬇️ Descargar MP4</span>
+          </a>
+          <button 
+            onclick="window.open('http://localhost:3000', '_blank')" 
+            class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold py-3 px-4 rounded-xl text-xs border border-slate-700 transition"
+            title="Abrir Remotion Studio interactivo"
+          >
+            👁️ Studio Dev
+          </button>
+        </div>
+
+        <!-- Consola de Logs en Vivo -->
+        <div class="space-y-1.5 pt-2">
+          <div class="flex items-center justify-between text-xs text-slate-400 font-semibold">
+            <span>Terminal de Actividad</span>
+            <button onclick="clearLogs()" class="hover:text-slate-200">Limpiar</button>
+          </div>
+          <div id="logsConsole" class="bg-black/80 border border-slate-800 rounded-xl p-3 h-32 overflow-y-auto font-mono text-[11px] text-emerald-400/90 custom-scroll space-y-1">
+            <div>[Sistema] Biblical Reels Studio listo.</div>
+          </div>
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- JAVASCRIPT DE CONTROL Y COMUNICACIÓN CON LA API -->
+  <script>
+    let currentStory = null;
+    let pollInterval = null;
+
+    // Al cargar la página, recuperar API Key del almacenamiento local y cargar la historia actual
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedKey = localStorage.getItem('gemini_api_key');
+      if (savedKey) document.getElementById('apiKeyInput').value = savedKey;
+
+      document.getElementById('apiKeyInput').addEventListener('input', (e) => {
+        localStorage.setItem('gemini_api_key', e.target.value.trim());
+      });
+
+      loadCurrentStory();
+      startStatusPolling();
+    });
+
+    function setPrompt(val) {
+      document.getElementById('promptInput').value = val;
+    }
+
+    function addLog(msg) {
+      const consoleBox = document.getElementById('logsConsole');
+      const div = document.createElement('div');
+      div.textContent = `[${new Date().toLocaleTimeString()}] ${msg}`;
+      consoleBox.appendChild(div);
+      consoleBox.scrollTop = consoleBox.scrollHeight;
+    }
+
+    function clearLogs() {
+      document.getElementById('logsConsole').innerHTML = '<div>[Sistema] Logs limpiados.</div>';
+    }
+
+    // Cargar la historia actual desde el servidor
+    async function loadCurrentStory() {
+      try {
+        const res = await fetch('/api/story');
+        if (res.ok) {
+          currentStory = await res.json();
+          renderScenesEditor(currentStory.scenes || []);
+          if (currentStory.voice) {
+            document.getElementById('voiceSelect').value = currentStory.voice;
+          }
+        }
+      } catch (e) {
+        addLog("No se pudo cargar la historia actual: " + e);
+      }
+    }
+
+    // Renderizar tarjetas de escenas en el editor
+    function renderScenesEditor(scenes) {
+      const container = document.getElementById('scenesContainer');
+      container.innerHTML = '';
+
+      scenes.forEach((sc, idx) => {
+        const card = document.createElement('div');
+        card.className = "bg-slate-950/70 border border-slate-800 p-4 rounded-2xl space-y-3 relative group";
+        
+        card.innerHTML = `
+          <div class="flex items-center justify-between text-xs border-b border-slate-800 pb-2">
+            <span class="font-bold text-amber-400">Escena #${idx + 1}</span>
+            <div class="flex items-center gap-2">
+              <input type="text" value="${sc.badge || ''}" placeholder="Insignia (ej: ÉXODO 14)" class="scene-badge bg-slate-900 border border-slate-700 rounded px-2 py-0.5 text-[11px] text-amber-300" onchange="updateScene(${idx}, 'badge', this.value)" />
+              <button onclick="removeScene(${idx})" class="text-rose-400 hover:text-rose-300 font-bold px-1">✕</button>
+            </div>
+          </div>
+
+          <div>
+            <label class="block text-[11px] text-slate-400 font-semibold mb-1">Narración (máximo 2 líneas):</label>
+            <textarea rows="2" class="scene-text w-full bg-slate-900 border border-slate-700 rounded-xl p-2 text-xs text-white" onchange="updateScene(${idx}, 'text', this.value)">${sc.text || ''}</textarea>
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-[11px]">
+            <div>
+              <label class="text-slate-400 block mb-0.5">Palabras Resaltadas:</label>
+              <input type="text" value="${(sc.highlightWords || []).join(', ')}" placeholder="ej: gigante, fe" class="w-full bg-slate-900 border border-slate-700 rounded p-1.5 text-amber-300" onchange="updateScene(${idx}, 'highlightWords', this.value.split(',').map(s => s.trim()).filter(Boolean))" />
+            </div>
+
+            <div>
+              <label class="text-slate-400 block mb-0.5">Personaje:</label>
+              <select class="w-full bg-slate-900 border border-slate-700 rounded p-1.5 text-slate-200" onchange="updateSceneCharacter(${idx}, this.value)">
+                <option value="duelo" ${sc.character?.type === 'duelo' ? 'selected' : ''}>Duelo (David vs Gigante)</option>
+                <option value="pastor" ${sc.character?.type === 'pastor' ? 'selected' : ''}>Pastor con cayado</option>
+                <option value="guerrero" ${sc.character?.type === 'guerrero' ? 'selected' : ''}>Guerrero / Goliat</option>
+                <option value="tunica" ${sc.character?.type === 'tunica' ? 'selected' : ''}>Túnica de oración</option>
+                <option value="multitud" ${sc.character?.type === 'multitud' ? 'selected' : ''}>Multitud / Ejército</option>
+                <option value="none" ${sc.character?.type === 'none' ? 'selected' : ''}>Sin personaje</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="text-slate-400 block mb-0.5">Efecto SFX:</label>
+              <select class="w-full bg-slate-900 border border-slate-700 rounded p-1.5 text-slate-200" onchange="updateScene(${idx}, 'sfxEntrada', this.value)">
+                <option value="whoosh" ${sc.sfxEntrada === 'whoosh' ? 'selected' : ''}>Whoosh (entrada suave)</option>
+                <option value="trueno" ${sc.sfxEntrada === 'trueno' ? 'selected' : ''}>Trueno (solemne/épico)</option>
+                <option value="brillo" ${sc.sfxEntrada === 'brillo' ? 'selected' : ''}>Brillo (celestial/milagro)</option>
+                <option value="suspenso" ${sc.sfxEntrada === 'suspenso' ? 'selected' : ''}>Suspenso (tensión)</option>
+                <option value="pop" ${sc.sfxEntrada === 'pop' ? 'selected' : ''}>Pop (ágil)</option>
+              </select>
+            </div>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function updateScene(idx, field, value) {
+      if (currentStory && currentStory.scenes[idx]) {
+        currentStory.scenes[idx][field] = value;
+      }
+    }
+
+    function updateSceneCharacter(idx, type) {
+      if (currentStory && currentStory.scenes[idx]) {
+        if (!currentStory.scenes[idx].character) currentStory.scenes[idx].character = {};
+        currentStory.scenes[idx].character.type = type;
+      }
+    }
+
+    function removeScene(idx) {
+      if (currentStory && currentStory.scenes.length > 1) {
+        currentStory.scenes.splice(idx, 1);
+        renderScenesEditor(currentStory.scenes);
+      }
+    }
+
+    function addNewScene() {
+      if (!currentStory) return;
+      const nextId = currentStory.scenes.length + 1;
+      currentStory.scenes.push({
+        id: nextId,
+        durationInSeconds: 5,
+        badge: "ESCENA " + nextId,
+        text: "Texto de la nueva escena bíblica.",
+        highlightWords: ["nueva"],
+        sfxEntrada: "whoosh",
+        background: { type: "gradient", colors: ["#0B132B", "#1C2541"], direction: "180deg" },
+        character: { type: "tunica", position: "center", scale: 1 },
+        visualAtmosphere: "stars"
+      });
+      renderScenesEditor(currentStory.scenes);
+    }
+
+    // Paso 1: Generar Historia con IA
+    async function generateStoryAction() {
+      const prompt = document.getElementById('promptInput').value.trim();
+      const voice = document.getElementById('voiceSelect').value;
+      const num_scenes = parseInt(document.getElementById('scenesCountSelect').value, 10);
+      const api_key = document.getElementById('apiKeyInput').value.trim() || null;
+
+      if (!prompt) {
+        alert("Por favor escribe un tema o prompt para la historia.");
+        return;
+      }
+
+      const btn = document.getElementById('btnGenerate');
+      btn.disabled = true;
+      btn.innerHTML = `<span class="animate-spin">⏳</span> Generando Guión con IA...`;
+      addLog(`Generando guión para: "${prompt}"...`);
+
+      try {
+        const res = await fetch('/api/generate-story', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ prompt, voice, num_scenes, api_key })
+        });
+        const data = await res.json();
+        if (data.success) {
+          currentStory = data.story;
+          renderScenesEditor(currentStory.scenes);
+          addLog(`¡Guión generado con éxito! ${currentStory.scenes.length} escenas creadas.`);
+          alert(`¡Historia "${currentStory.title}" generada con éxito! Revisa las escenas y haz clic en "Sintetizar Voz".`);
+        } else {
+          addLog("Error: " + data.message);
+        }
+      } catch (e) {
+        addLog("Error de red: " + e);
+      } finally {
+        btn.disabled = false;
+        btn.innerHTML = `<span>✨ Generar Guión Completo con IA</span>`;
+      }
+    }
+
+    // Paso 2: Guardar y Generar Voz (Edge-TTS)
+    async function saveAndGenerateVoice() {
+      if (!currentStory) return;
+      const btn = document.getElementById('btnSaveVoice');
+      btn.disabled = true;
+      btn.innerHTML = `⏳ Guardando y sintetizando voz...`;
+
+      try {
+        // Guardar la historia primero
+        currentStory.voice = document.getElementById('voiceSelect').value;
+        await fetch('/api/save-story', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ story: currentStory })
+        });
+        addLog("Historia guardada. Iniciando síntesis de voz con Edge-TTS...");
+
+        // Llamar a la generación de voz
+        const res = await fetch('/api/generate-voice', { method: 'POST' });
+        const data = await res.json();
+        addLog(data.message);
+      } catch (e) {
+        addLog("Error al generar voz: " + e);
+      } finally {
+        setTimeout(() => {
+          btn.disabled = false;
+          btn.innerHTML = `<span>🎙️ Sintetizar Voz en Off (Edge-TTS)</span>`;
+        }, 3000);
+      }
+    }
+
+    // Paso 3: Renderizar Video MP4 (Remotion)
+    async function startRenderVideo() {
+      const btn = document.getElementById('btnRender');
+      btn.disabled = true;
+      btn.innerHTML = `⏳ Renderizando con Remotion...`;
+
+      addLog("Iniciando renderizado con Remotion. Este proceso toma unos 30-45 segundos...");
+      try {
+        const res = await fetch('/api/render-video', { method: 'POST' });
+        const data = await res.json();
+        addLog(data.message);
+      } catch (e) {
+        addLog("Error al iniciar render: " + e);
+        btn.disabled = false;
+        btn.innerHTML = `<span>🚀 Renderizar Reel MP4 (1080×1920)</span>`;
+      }
+    }
+
+    // Polling del estado del servidor para actualizar UI en tiempo real
+    function startStatusPolling() {
+      if (pollInterval) clearInterval(pollInterval);
+      pollInterval = setInterval(async () => {
+        try {
+          const res = await fetch('/api/status');
+          if (res.ok) {
+            const data = await res.json();
+            updateUIStatus(data);
+          }
+        } catch (e) {}
+      }, 2000);
+    }
+
+    function updateUIStatus(data) {
+      const statusText = document.getElementById('statusText');
+      const statusDot = document.getElementById('statusDot');
+      const progressContainer = document.getElementById('progressContainer');
+      const progressBar = document.getElementById('progressBar');
+      const progressPercent = document.getElementById('progressPercent');
+      const progressLabel = document.getElementById('progressLabel');
+
+      statusText.textContent = data.message || "Listo";
+
+      if (data.status === 'generating_voice' || data.status === 'rendering' || data.status === 'generating_story') {
+        statusDot.className = "w-2.5 h-2.5 rounded-full bg-amber-400 animate-ping";
+        progressContainer.classList.remove('hidden');
+        progressBar.style.width = (data.progress || 50) + '%';
+        progressPercent.textContent = (data.progress || 50) + '%';
+        progressLabel.textContent = data.message;
+      } else {
+        statusDot.className = data.status === 'error' ? "w-2.5 h-2.5 rounded-full bg-rose-500" : "w-2.5 h-2.5 rounded-full bg-emerald-400";
+        if (data.status === 'completed') {
+          progressContainer.classList.add('hidden');
+          document.getElementById('btnRender').disabled = false;
+          document.getElementById('btnRender').innerHTML = `<span>🚀 Renderizar Reel MP4 (1080×1920)</span>`;
+        }
+      }
+
+      // Si existe el video renderizado, mostrar reproductor
+      if (data.video_exists) {
+        const player = document.getElementById('videoPlayer');
+        const placeholder = document.getElementById('videoPlaceholder');
+        const actions = document.getElementById('videoActions');
+
+        if (player.classList.contains('hidden')) {
+          player.classList.remove('hidden');
+          placeholder.classList.add('hidden');
+          actions.classList.remove('hidden');
+          player.src = `/api/video?t=${Date.now()}`;
+        }
+      }
+    }
+  </script>
+</body>
+</html>
