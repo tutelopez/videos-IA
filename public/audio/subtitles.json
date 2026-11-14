@@ -1,0 +1,370 @@
+{
+  "voice": "es-AR-TomasNeural",
+  "fps": 30,
+  "scenes": {
+    "1": {
+      "id": 1,
+      "audioFile": "audio/scene_1.mp3",
+      "audioDuration": 6.096,
+      "pauseDuration": 0.5,
+      "totalDuration": 6.596,
+      "durationInFrames": 198,
+      "words": [
+        {
+          "word": "¿Conoces",
+          "start": 0.1,
+          "end": 0.612,
+          "startFrame": 3
+        },
+        {
+          "word": "el",
+          "start": 0.613,
+          "end": 0.688,
+          "startFrame": 18
+        },
+        {
+          "word": "momento",
+          "start": 0.725,
+          "end": 1.15,
+          "startFrame": 22
+        },
+        {
+          "word": "en",
+          "start": 1.175,
+          "end": 1.262,
+          "startFrame": 35
+        },
+        {
+          "word": "que",
+          "start": 1.312,
+          "end": 1.387,
+          "startFrame": 39
+        },
+        {
+          "word": "David",
+          "start": 1.413,
+          "end": 1.725,
+          "startFrame": 42
+        },
+        {
+          "word": "y",
+          "start": 1.775,
+          "end": 1.812,
+          "startFrame": 53
+        },
+        {
+          "word": "goliat",
+          "start": 1.85,
+          "end": 2.263,
+          "startFrame": 56
+        },
+        {
+          "word": "(1",
+          "start": 2.425,
+          "end": 2.862,
+          "startFrame": 73
+        },
+        {
+          "word": "samuel",
+          "start": 2.705,
+          "end": 2.955,
+          "startFrame": 81
+        },
+        {
+          "word": "17)",
+          "start": 2.9,
+          "end": 3.513,
+          "startFrame": 87
+        },
+        {
+          "word": "cambió",
+          "start": 3.837,
+          "end": 4.1,
+          "startFrame": 115
+        },
+        {
+          "word": "la",
+          "start": 4.125,
+          "end": 4.162,
+          "startFrame": 124
+        },
+        {
+          "word": "historia",
+          "start": 4.175,
+          "end": 4.513,
+          "startFrame": 125
+        },
+        {
+          "word": "para",
+          "start": 4.575,
+          "end": 4.713,
+          "startFrame": 137
+        },
+        {
+          "word": "siempre?",
+          "start": 4.737,
+          "end": 5.162,
+          "startFrame": 142
+        }
+      ]
+    },
+    "2": {
+      "id": 2,
+      "audioFile": "audio/scene_2.mp3",
+      "audioDuration": 4.632,
+      "pauseDuration": 0.5,
+      "totalDuration": 5.132,
+      "durationInFrames": 154,
+      "words": [
+        {
+          "word": "En",
+          "start": 0.1,
+          "end": 0.263,
+          "startFrame": 3
+        },
+        {
+          "word": "medio",
+          "start": 0.3,
+          "end": 0.562,
+          "startFrame": 9
+        },
+        {
+          "word": "de",
+          "start": 0.6,
+          "end": 0.662,
+          "startFrame": 18
+        },
+        {
+          "word": "la",
+          "start": 0.688,
+          "end": 0.775,
+          "startFrame": 21
+        },
+        {
+          "word": "prueba",
+          "start": 0.85,
+          "end": 1.087,
+          "startFrame": 26
+        },
+        {
+          "word": "más",
+          "start": 1.113,
+          "end": 1.25,
+          "startFrame": 33
+        },
+        {
+          "word": "difícil,",
+          "start": 1.275,
+          "end": 1.8,
+          "startFrame": 38
+        },
+        {
+          "word": "todo",
+          "start": 2.0,
+          "end": 2.188,
+          "startFrame": 60
+        },
+        {
+          "word": "parecía",
+          "start": 2.263,
+          "end": 2.663,
+          "startFrame": 68
+        },
+        {
+          "word": "perdido",
+          "start": 2.737,
+          "end": 3.05,
+          "startFrame": 82
+        },
+        {
+          "word": "humanamente.",
+          "start": 3.075,
+          "end": 3.688,
+          "startFrame": 92
+        }
+      ]
+    },
+    "3": {
+      "id": 3,
+      "audioFile": "audio/scene_3.mp3",
+      "audioDuration": 4.68,
+      "pauseDuration": 0.5,
+      "totalDuration": 5.18,
+      "durationInFrames": 155,
+      "words": [
+        {
+          "word": "Pero",
+          "start": 0.1,
+          "end": 0.325,
+          "startFrame": 3
+        },
+        {
+          "word": "Dios",
+          "start": 0.35,
+          "end": 0.55,
+          "startFrame": 10
+        },
+        {
+          "word": "se",
+          "start": 0.55,
+          "end": 0.675,
+          "startFrame": 16
+        },
+        {
+          "word": "manifestó",
+          "start": 0.713,
+          "end": 1.2,
+          "startFrame": 21
+        },
+        {
+          "word": "con",
+          "start": 1.262,
+          "end": 1.425,
+          "startFrame": 38
+        },
+        {
+          "word": "poder",
+          "start": 1.438,
+          "end": 1.663,
+          "startFrame": 43
+        },
+        {
+          "word": "sobrenatural",
+          "start": 1.688,
+          "end": 2.312,
+          "startFrame": 51
+        },
+        {
+          "word": "frente",
+          "start": 2.337,
+          "end": 2.688,
+          "startFrame": 70
+        },
+        {
+          "word": "a",
+          "start": 2.688,
+          "end": 2.75,
+          "startFrame": 81
+        },
+        {
+          "word": "todos",
+          "start": 2.825,
+          "end": 2.975,
+          "startFrame": 85
+        },
+        {
+          "word": "los",
+          "start": 3.013,
+          "end": 3.088,
+          "startFrame": 90
+        },
+        {
+          "word": "presentes.",
+          "start": 3.163,
+          "end": 3.775,
+          "startFrame": 95
+        }
+      ]
+    },
+    "4": {
+      "id": 4,
+      "audioFile": "audio/scene_4.mp3",
+      "audioDuration": 7.104,
+      "pauseDuration": 0.5,
+      "totalDuration": 7.604,
+      "durationInFrames": 228,
+      "words": [
+        {
+          "word": "Recuerda:",
+          "start": 0.1,
+          "end": 0.762,
+          "startFrame": 3
+        },
+        {
+          "word": "ningún",
+          "start": 0.963,
+          "end": 1.288,
+          "startFrame": 29
+        },
+        {
+          "word": "gigante",
+          "start": 1.312,
+          "end": 1.85,
+          "startFrame": 39
+        },
+        {
+          "word": "es",
+          "start": 1.925,
+          "end": 2.087,
+          "startFrame": 58
+        },
+        {
+          "word": "más",
+          "start": 2.112,
+          "end": 2.275,
+          "startFrame": 63
+        },
+        {
+          "word": "grande",
+          "start": 2.3,
+          "end": 2.612,
+          "startFrame": 69
+        },
+        {
+          "word": "que",
+          "start": 2.688,
+          "end": 2.75,
+          "startFrame": 81
+        },
+        {
+          "word": "el",
+          "start": 2.75,
+          "end": 2.85,
+          "startFrame": 82
+        },
+        {
+          "word": "Dios",
+          "start": 2.938,
+          "end": 3.125,
+          "startFrame": 88
+        },
+        {
+          "word": "que",
+          "start": 3.188,
+          "end": 3.25,
+          "startFrame": 96
+        },
+        {
+          "word": "camina",
+          "start": 3.3,
+          "end": 3.612,
+          "startFrame": 99
+        },
+        {
+          "word": "contigo.",
+          "start": 3.663,
+          "end": 4.162,
+          "startFrame": 110
+        },
+        {
+          "word": "Sígueme",
+          "start": 5.088,
+          "end": 5.513,
+          "startFrame": 153
+        },
+        {
+          "word": "para",
+          "start": 5.575,
+          "end": 5.725,
+          "startFrame": 167
+        },
+        {
+          "word": "más.",
+          "start": 5.763,
+          "end": 6.125,
+          "startFrame": 173
+        }
+      ]
+    }
+  }
+}

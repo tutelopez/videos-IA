@@ -1,0 +1,44 @@
+{
+  "instructions": "Usa estos prompts en Midjourney, Adobe Firefly, DALL-E 3 o Gemini Image para generar fondos verticales 1080×1920 para cada escena. Guarda cada imagen como PNG en public/scenes/ con el nombre indicado en 'filename'. Luego agrega 'sceneImage' y 'imageOpacity' en story.json para activarla.",
+  "global_style_notes": {
+    "aspect_ratio": "9:16 vertical portrait",
+    "resolution": "1080x1920",
+    "style_base": "flat vector illustration with painterly texture, warm cinematic lighting, biblical ancient middle east, no people, no text, no watermarks",
+    "quality_flags_midjourney": "--ar 9:16 --v 6.1 --style raw --q 2"
+  },
+  "scenes": {
+    "1": {
+      "title": "David el Pastor – Noche Estrellada",
+      "scene_description": "Escena 1: David era pastor en las noches del desierto palestino",
+      "prompt_en": "Vast starry night sky over rolling Judean desert hills, ancient Palestinian landscape, small shepherd campfire glowing orange in the distance, dry rocky terrain, sparse desert shrubs, Milky Way visible overhead, deep midnight blue and indigo tones, moody cinematic atmosphere, flat vector illustration with painterly texture, no people, no text, vertical 9:16 portrait --ar 9:16 --v 6.1 --style raw --q 2",
+      "prompt_es": "Vasto cielo nocturno estrellado sobre colinas del desierto de Judea, paisaje palestino antiguo, pequeña fogata de pastor brillando en naranja a lo lejos, terreno rocoso árido, arbustos de desierto, Vía Láctea visible, tonos azul medianoche e índigo, atmósfera cinematográfica oscura, ilustración vectorial plana con textura pictórica, sin personas, sin texto, vertical 9:16",
+      "negative_prompt": "people, faces, text, watermark, logo, modern buildings, cars, animals, daylight, bright colors",
+      "style": "midnight blue, indigo, deep purple, warm orange campfire accent",
+      "mood": "mysterious, spiritual, vast",
+      "filename": "scene_1.png",
+      "suggested_imageOpacity": 0.85
+    },
+    "2": {
+      "title": "Campo de Batalla Bíblico – Dos Ejércitos",
+      "scene_description": "Escena 2: David con su honda frente al ejército filisteo",
+      "prompt_en": "Ancient biblical battlefield valley at dramatic golden hour, two distant armies facing each other on opposite hillsides, Valley of Elah, dusty haze, long shadows, dramatic sun rays breaking through storm clouds, ochre and burnt sienna desert landscape, ancient middle east, cinematic epic atmosphere, flat vector illustration with painterly texture, no people close up, no text, vertical 9:16 portrait --ar 9:16 --v 6.1 --style raw --q 2",
+      "prompt_es": "Valle de batalla bíblico antiguo al atardecer dorado dramático, dos ejércitos distantes enfrentados en colinas opuestas, Valle de Ela, neblina de polvo, sombras largas, rayos de sol dramáticos atravesando nubes de tormenta, paisaje desértico ocre y siena quemado, Oriente Medio antiguo, atmósfera épica cinematográfica, ilustración vectorial plana con textura pictórica, sin primeros planos de personas, sin texto, vertical 9:16",
+      "negative_prompt": "people close up, faces, text, watermark, logo, modern buildings, cars, nighttime, cold colors",
+      "style": "golden hour orange, ochre, sienna, dramatic sun shafts, dusty amber",
+      "mood": "epic, tense, dramatic",
+      "filename": "scene_2.png",
+      "suggested_imageOpacity": 0.80
+    },
+    "3": {
+      "title": "Alba Divina – Luz del Cielo sobre Judea",
+      "scene_description": "Escena 3: La fe de David como verdadera fuente de fuerza",
+      "prompt_en": "Golden divine dawn breaking over the Judean desert, heavenly light rays beaming down from dramatic sky to earth, silhouetted ancient Judean hills in the foreground, warm gold and white light from above, rays of glory piercing clouds, spiritual and transcendent atmosphere, flat vector illustration with painterly texture, no people, no text, vertical 9:16 portrait --ar 9:16 --v 6.1 --style raw --q 2",
+      "prompt_es": "Amanecer divino dorado sobre el desierto de Judea, rayos de luz celestial descendiendo desde un cielo dramático hacia la tierra, silueta de colinas antiguas de Judea en primer plano, luz cálida dorada y blanca desde arriba, rayos de gloria atravesando nubes, atmósfera espiritual y trascendente, ilustración vectorial plana con textura pictórica, sin personas, sin texto, vertical 9:16",
+      "negative_prompt": "people, faces, text, watermark, logo, modern buildings, cars, darkness, storm, cold colors, night",
+      "style": "divine gold, warm white, cream, celestial rays, deep blue sky",
+      "mood": "hopeful, divine, transcendent, peaceful",
+      "filename": "scene_3.png",
+      "suggested_imageOpacity": 0.80
+    }
+  }
+}

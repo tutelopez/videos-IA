@@ -1,0 +1,25 @@
+{
+  "sfx": [
+    "whoosh.mp3",
+    "suspenso.mp3",
+    "trueno.mp3",
+    "pop.mp3",
+    "campana.mp3",
+    "impacto.mp3",
+    "brillo.mp3"
+  ],
+  "music": [
+    "background.mp3"
+  ],
+  "audio": [
+    "scene_6.mp3",
+    "scene_7.mp3",
+    "scene_5.mp3",
+    "scene_4.mp3",
+    "scene_1.mp3",
+    "scene_3.mp3",
+    "scene_2.mp3",
+    "scene_9.mp3",
+    "scene_8.mp3"
+  ]
+}
